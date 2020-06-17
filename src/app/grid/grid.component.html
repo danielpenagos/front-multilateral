@@ -1,0 +1,48 @@
+<div class="col-md-8">
+    <p>Consolidado</p>
+    <div class="containersim">
+        <div [ngStyle]="styleMatrix()">
+            <div [ngClass]="getClass(i, value)" *ngFor="let value of appComponent.arregloConsolidado; let i=index">{{value}}</div>
+        </div>
+    </div>
+    <p></p>
+    <p>Bilateral</p>
+    <div class="containersim">
+        <div [ngStyle]="styleMatrix()">
+            <div [ngClass]="getClass(i, value)" *ngFor="let value of appComponent.arregloBilateral; let i=index">{{value}}</div>
+        </div>
+    </div>
+    <p></p>
+    <div>
+        <p>Multilateral</p>
+        <div *ngIf="appComponent.tieneMultilateral">
+            <p>Camino: {{appComponent.caminoMultilateral}}</p>
+            <p>Indices: {{appComponent.indicesCaminoMultilateral}}</p>
+            <div class="containersim">
+                <div [ngStyle]="styleMatrix()">
+                    <div [ngClass]="getClass(i, value)" *ngFor="let value of appComponent.arregloMultilateral; let i=index">{{value}}</div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!appComponent.tieneMultilateral">
+            <p>No hay neteo multilateral para aplicar</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <p>Entidades Financieras</p>
+    <div class="containerentidades">
+        <div class="gridentidades">
+            <div class="cellentidades" *ngFor="let value of appComponent.entidades; let i=index">{{value}}</div>
+        </div>
+    </div>
+    <p>Estadísticas</p>
+    <div class="containerentidades">
+        <div class="gridestadisticas">
+            <div class="cellentidades">No. Tx: {{appComponent.numTransacciones}}</div>
+            <div class="cellentidades">milisecs: {{appComponent.milis}}</div>
+        </div>
+    </div>
+
+</div>
