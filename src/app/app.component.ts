@@ -128,8 +128,6 @@ export class AppComponent implements OnInit {
     this.greeting = 'Invitado';
     this.webSocketAPI._connect();
     this.actualizarEstadoSimulacion();
-    //console.log(this.simulador.getSimulacionAutomatica());
-
   }
 
   connect(){

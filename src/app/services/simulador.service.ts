@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 export class SimuladorService {
 
   private api = "http://localhost:8080";
-  //private api = "http://bingodai.eastus.cloudapp.azure.com";
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
